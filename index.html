@@ -1,1 +1,467 @@
-<html><body>test</body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="関東・関西の「就労移行支援事業所」を現在地から近い順に探せる無料検索ポータル。利用時間や定休日、定員などの詳細情報もひと目でわかります。一般就労を目指すあなたの最初の一歩を優しくサポートします。">
+    <!-- 👑 テスト中の一時的な検索ブロック -->
+    <meta name="robots" content="noindex">
+
+    <!-- 👑 正規URLの指定（ロリポップ配下のフォルダパスに完全同期） -->
+    <link rel="canonical" href="https://for-welfare.pray-power-is-god-and-cocoro.com/nursing-home/">
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%270.9em%27%20font-size%3D%2790%27%3E%F0%9F%8C%BF%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>まごころ介護施設ナビ（全国版）</title>
+
+<!-- 👑 GA4（Google Analytics）コード -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8RDBH5D7M3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8RDBH5D7M3');
+</script>
+
+    <style>
+        :root {
+            --bg-color: #f4f9f4;
+            --main-green: #5a9e82;
+            --main-blue: #4a90e2;
+            --main-orange: #f39c12;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        .header { background-color: var(--main-green); color: white; text-align: center; padding: 18px 10px; font-weight: bold; font-size: 1.2rem; margin: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
+        .disclaimer { background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px; border: 1px solid #ffeeba; }
+        
+        .update-info { text-align: right; font-size: 0.75rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.4; }
+
+        .search-box { background: var(--card-bg); padding: 25px 20px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); border: 1px solid var(--border-color); }
+        .search-input { width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; margin-bottom: 15px; }
+        .btn-search { background-color: #4b5563; color: white; border: none; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 8px; width: 100%; cursor: pointer; margin-bottom: 25px; }
+        .btn-gps { background-color: var(--main-green); color: white; border: none; padding: 15px 20px; font-size: 1.1rem; font-weight: bold; border-radius: 30px; width: 100%; cursor: pointer; box-shadow: 0 4px 6px rgba(90, 158, 130, 0.25); }
+        
+        .card { background: var(--card-bg); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border: 1px solid var(--border-color); position: relative; }
+        .card h3 { margin: 10px 0; font-size: 1.15rem; color: var(--text-main); }
+        .card p { margin: 6px 0; font-size: 0.95rem; color: var(--text-main); }
+        .tel-link { color: var(--main-green); font-weight: bold; text-decoration: none; display: inline-block; padding: 5px 0; }
+        
+        .distance-badge { display: inline-block; background-color: #e2e8f0; color: #475569; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; }
+        .approx-note { font-size: 0.75rem; color: #dc2626; margin-top: 4px; display: block; }
+
+        .service-tag { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; color: white; margin-bottom: 10px; }
+        .tag-tokuyo { background-color: var(--main-blue); }
+        .tag-roken { background-color: var(--main-orange); }
+        .tag-yuryo { background-color: #e84393; }
+        .tag-sakoju { background-color: var(--main-green); }
+        .tag-default { background-color: #4b5563; }
+
+        details.facility-details { margin-top: 15px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; }
+        details.facility-details summary { cursor: pointer; color: #0284c7; font-weight: bold; font-size: 0.9rem; list-style: none; display: flex; align-items: center; justify-content: center; }
+        details.facility-details summary::-webkit-details-marker { display: none; }
+        .detail-content { margin-top: 12px; font-size: 0.85rem; color: var(--text-main); line-height: 1.6; border-top: 1px dashed #cbd5e1; padding-top: 10px; }
+        .detail-content p { margin: 4px 0 !important; }
+
+        .btn-more { background-color: #ffffff; color: var(--main-green); border: 2px solid var(--main-green); padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 30px; width: 100%; cursor: pointer; margin-top: 10px; }
+        .btn-top { position: fixed; bottom: 20px; right: 20px; background-color: var(--main-green); color: white; width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1000; }
+
+        .seo-article-box { background: #ffffff; padding: 20px; border-radius: 12px; margin-top: 30px; margin-bottom: 25px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
+        .seo-article-title { color: var(--main-green); font-size: 1.15rem; font-weight: bold; margin-top: 0; margin-bottom: 15px; text-align: center; }
+        .accordion-btn { background-color: #f1f5f9; color: var(--text-main); border: 1px solid #cbd5e1; padding: 15px 20px; font-size: 1rem; font-weight: bold; border-radius: 8px; width: 100%; cursor: pointer; text-align: left; position: relative; transition: 0.2s; margin-bottom: 10px; }
+        .accordion-btn:hover { background-color: #e2e8f0; }
+        .accordion-btn::after { content: '▼'; position: absolute; right: 20px; color: var(--main-green); }
+        .accordion-btn.active::after { content: '▲'; }
+        .accordion-content { display: none; padding: 15px; background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-main); line-height: 1.8; }
+        .accordion-content h3 { color: #0f172a; margin-top: 0; margin-bottom: 10px; font-size: 1.05rem; border-bottom: 2px solid var(--main-green); padding-bottom: 5px; display: inline-block; }
+        
+        .affiliate-box { background-color: #fffbeb; border: 2px solid #fbbf24; padding: 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
+        .adsense-container { text-align: center; margin: 35px 0; min-height: 250px; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
+        .donation-box { background-color: #ffffff; border: 1px solid var(--border-color); padding: 25px 20px; border-radius: 12px; text-align: center; margin-top: 40px; }
+        .donation-title { color: var(--main-green); font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+        .donation-text { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 20px; text-align: left; line-height: 1.7; }
+        .btn-donation { display: inline-block; background-color: #ff9900; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <h1 class="header">🌿 まごころ介護施設ナビ<br>（老人ホーム・介護施設検索）</h1>
+
+    <div class="container">
+        <div class="disclaimer">
+            <strong>【免責事項】</strong><br>
+            当サイトは行政の公開データを自動整理して表示しています。見学やご利用をご検討の際は、必ず直接事業所へお問い合わせください。
+        </div>
+
+        <div class="pro-mode-toggle" onclick="toggleProMode()">
+            ⚙️ プロ向け：複数サービス横断モードを閉じる ▲
+        </div>
+        
+        <div id="proSettings" class="pro-settings">
+            <div style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 10px;">
+                探したい施設種別にチェックを入れてください。複数同時に距離順で検索できます。
+            </div>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-tokuyo" value="data_tokuyo.json" checked> 🏷️ 特別養護老人ホーム（特養）
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-roken" value="data_roken.json" checked> 🏷️ 介護老人保健施設（老健）
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-yuryo" value="data_yuryo.json" checked> 🏷️ 有料老人ホーム
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-sakoju" value="data_sakoju.json"> 🏷️ サービス付き高齢者向け住宅（サ高住）
+                </label>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <h2 style="margin-top: 0; font-size: 1.25rem; line-height: 1.4;">現在地から一番近い<br>施設を探す</h2>
+            <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 20px;">※位置情報はサーバーには送信されません。<br>※一番上に表示される施設が最寄りになります。<br>※「位置情報」をONにする必要があります。</p>
+            <button class="btn-gps" onclick="sortByGPS()">📍 現在地から近い順に探す</button>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
+            <h3 style="font-size: 1rem; color: var(--text-main); margin-top: 0;">住所・施設名で絞り込む</h3>
+            <input type="text" id="searchInput" class="search-input" placeholder="例：東大阪市、ハッピーケア など" onkeypress="handleEnter(event)">
+            <button class="btn-search" onclick="searchByKeyword()">🔍 検索する</button>
+        </div>
+
+        <div style="font-size: 0.8rem; color: var(--text-sub); margin-bottom: 15px; padding: 12px; background-color: rgba(255,255,255,0.45); border-radius: 8px; border: 1px solid var(--border-color); line-height: 1.5; text-align: left;">
+            💡 <strong>【位置情報の精度について】</strong><br>
+            表示される距離はお使いの端末のGPSから計算しています。元の行政データに正確な番地座標がない場合は、市役所などからの「目安距離」として計算されます。お近くの地域にある施設としての目安としてご活用ください。
+        </div>
+
+        <div id="results"></div>
+        <div id="moreContainer" style="text-align: center; display: none;">
+            <button class="btn-more" onclick="showMore()">もっと見る ＋</button>
+        </div>
+
+        <!-- 👑 アフィリエイト広告誘導エリア（将来的にここにタグを貼る） -->
+        <div class="affiliate-box">
+            <h3 style="color: #b45309; margin-top: 0; font-size: 1.1rem;">🏢 老人ホーム選び、プロに無料で相談しませんか？</h3>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 15px;">「どの施設が合うかわからない」「予算内で入れる施設を知りたい」という方は、LIFULL介護などの大手無料相談サービスを利用すると、専門のアドバイザーが最適な施設を提案してくれます。</p>
+            <div style="padding: 10px; background: white; border: 1px dashed #ccc; color: #999; font-size: 0.8rem;">（※ここに高単価な老人ホーム紹介アフィリエイト広告を配置します）</div>
+        </div>
+
+        <div class="seo-article-box">
+            <h2 class="seo-article-title">📘 老人ホーム探しの基本（やさしい解説）</h2>
+            
+            <button class="accordion-btn" onclick="toggleAccordion('faq1', this)">Q1. 特別養護老人ホーム（特養）と介護老人保健施設（老健）の違いは何ですか？</button>
+            <div id="faq1" class="accordion-content">
+                <h3>「終の棲家」か「リハビリして自宅に戻る場所」かの違い</h3>
+                <p><strong>特別養護老人ホーム（特養）</strong>は、原則として「要介護3以上」の高齢者が、生涯にわたって安心して暮らすための公的施設です。費用が安いため非常に人気があり、入所待ちが発生することが多いのが特徴です。</p>
+                <p>一方、<strong>介護老人保健施設（老健）</strong>は、病院を退院した後などに「リハビリを行い、自宅復帰を目指すための施設」です。原則3ヶ月程度での退所が前提となっており、長期間ずっと暮らし続けることはできません。</p>
+            </div>
+
+            <button class="accordion-btn" onclick="toggleAccordion('faq2', this)">Q2. 有料老人ホームとサービス付き高齢者向け住宅（サ高住）の違いは？</button>
+            <div id="faq2" class="accordion-content">
+                <h3>サービスの手厚さと「契約形態」が異なります</h3>
+                <p><strong>介護付き有料老人ホーム</strong>は、施設のスタッフから食事・排泄・入浴などの介護サービスを24時間体制で直接受けられる施設です。重度の要介護になっても転居せず、そのまま暮らし続けられる安心感があります。</p>
+                <p>一方、**サービス付き高齢者向け住宅（サ高住）**は、原則として高齢者向けの「バリアフリー賃貸住宅」です。基本は安否確認や生活相談サービスのみで、介護が必要な場合は、一般の自宅暮らしと同じように外部のヘルパー（訪問介護等）を個別に契約して利用します。</p>
+            </div>
+
+            <button class="accordion-btn" onclick="toggleAccordion('faq3', this)">Q3. 特養に入るための費用はどれくらいかかりますか？</button>
+            <div id="faq3" class="accordion-content">
+                <h3>月額の目安は、およそ8万〜15万円前後です</h3>
+                <p>特別養護老人ホーム（特養）は公的な施設であるため、民間の有料老人ホームに比べて非常に安価に設定されています。また、世帯の収入（住民税非課税世帯など）やご本人の年金受給額に応じて、居住費や食費の「負担軽減制度（補足給付）」が適用され、さらに安くなる仕組みがあります。</p>
+            </div>
+
+            <button class="accordion-btn" onclick="toggleAccordion('faq4', this)">Q4. 介護離職を防ぐために、まず何をすべきですか？</button>
+            <div id="faq4" class="accordion-content">
+                <h3>一人で抱えず、まず地域の「地域包括支援センター」へ相談を</h3>
+                <p>「親の介護のために仕事を辞めけないかも」と思ったら、まずは仕事を辞める前に、お住まいの自治体の窓口や<strong>「地域包括支援センター」</strong>へ相談してください。</p>
+                <p>ケアマネジャーを決定し、介護保険の各種サービス（デイサービスやショートステイ、老健での一時入所など）をパズルのように組み合わせることで、仕事を続けながら介護を両立させる体制をプロと一緒に作ることができます。絶対に一人で抱え込まないでください。</p>
+            </div>
+        </div>
+
+        <script>
+            function toggleAccordion(id, btn) {
+                const content = document.getElementById(id);
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    btn.classList.remove("active");
+                } else {
+                    content.style.display = "block";
+                    btn.classList.add("active");
+                }
+            }
+        </script>
+
+        <!-- 👑 コメントアウトされた Google AdSense 広告ユニット -->
+        <!--
+        <div class="adsense-container" style="text-align: center; margin: 40px 0; min-height: 250px;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2908004621823900" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-2908004621823900"
+                 data-ad-slot="3799886389"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        -->
+
+        <div class="donation-box">
+            <div class="donation-title">☕ 運営へのあたたかいご支援</div>
+            <div class="donation-text">
+                このサイトが少しでもお役に立てたなら、運営継続のためにご支援（100円缶コーヒー1杯分でも）をいただけると非常に励みになります。いただいたご支援は、サイトの安定した運営維持等、と、ゆくゆくは福祉活動への思いに使わせていただきます。
+            </div>
+            <a href="https://ofuse.me/fbcb2675" class="btn-donation">🎁 開発者を支援する</a>
+        </div>
+    </div>
+
+    <button id="btnTop" class="btn-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let allData = [];
+        let displayData = [];
+        let currentIndex = 0;
+        const ITEMS_PER_PAGE = 10;
+        let isProMode = true;
+
+        function toggleProMode() {
+            const panel = document.getElementById('proSettings');
+            isProMode = !isProMode;
+            panel.style.display = isProMode ? 'block' : 'none';
+            document.querySelector('.pro-mode-toggle').innerText = isProMode 
+                ? '⚙️ プロ向け：複数サービス横断モードを閉じる ▲' 
+                : '⚙️ プロ向け：複数サービス横断モードを開く ▼';
+        }
+
+        async function fetchSelectedData() {
+            document.getElementById('results').innerHTML = `<div style="text-align: center; color: var(--text-sub); padding: 20px;">📡 データを取得中...</div>`;
+            
+            let filesToFetch = [];
+            
+            // 👑 【改善適用】パネルの開閉状態（isProMode）に依存せず、常にチェックボックスのチェック状態のみを参照
+            if (document.getElementById('chk-tokuyo').checked) filesToFetch.push('data_tokuyo.json');
+            if (document.getElementById('chk-roken').checked) filesToFetch.push('data_roken.json');
+            if (document.getElementById('chk-yuryo').checked) filesToFetch.push('data_yuryo.json');
+            if (document.getElementById('chk-sakoju').checked) filesToFetch.push('data_sakoju.json');
+
+            if (filesToFetch.length === 0) {
+                alert("検索する施設種別を1つ以上選択してください。");
+                document.getElementById('results').innerHTML = "";
+                return false;
+            }
+
+            allData = [];
+            try {
+                // 👑 キャッシュ破壊のための timestamp を適用して安全にフェッチ
+                const timestamp = new Date().getTime();
+                const fetchPromises = filesToFetch.map(file => fetch('./' + file + '?t=' + timestamp, { cache: "no-store" }).then(res => {
+                    if (!res.ok) throw new Error("File not found");
+                    return res.json();
+                }));
+                const resultsArray = await Promise.allSettled(fetchPromises);
+                
+                let successCount = 0;
+                resultsArray.forEach(result => {
+                    if (result.status === "fulfilled" && Array.isArray(result.value)) {
+                        allData = allData.concat(result.value);
+                        successCount++;
+                    }
+                });
+
+                if (successCount === 0) {
+                    throw new Error("All fetches failed");
+                }
+                return true;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('results').innerHTML = `<div style="text-align: center; color: #dc2626;">データの読み込みに失敗しました。</div>`;
+                return false;
+            }
+        }
+
+        async function sortByGPS() {
+            if (!navigator.geolocation) {
+                alert("お使いの端末はGPS機能に対応していません。");
+                return;
+            }
+
+            const success = await fetchSelectedData();
+            if(!success) return;
+
+            document.getElementById('results').innerHTML = `<div style="text-align: center; color: var(--text-sub); padding: 20px;">📍 距離を計算中...</div>`;
+            document.getElementById('moreContainer').style.display = 'none';
+
+            navigator.geolocation.getCurrentPosition(position => {
+                const userLat = position.coords.latitude;
+                const userLon = position.coords.longitude;
+
+                displayData = allData.map(item => {
+                    const dist = calculateDistance(userLat, userLon, item.lat, item.lon);
+                    return { ...item, distance: dist };
+                });
+
+                displayData.sort((a, b) => a.distance - b.distance);
+                
+                currentIndex = 0;
+                document.getElementById('results').innerHTML = "";
+                showMore();
+
+            }, error => {
+                alert("位置情報が取得できませんでした。スマホの設定で許可するか、検索窓をご利用ください。");
+                document.getElementById('results').innerHTML = "";
+            });
+        }
+
+        async function searchByKeyword() {
+            const keyword = document.getElementById('searchInput').value.trim().normalize("NFKC").toLowerCase();
+            if (!keyword) {
+                alert("検索キーワードを入力してください。");
+                return;
+            }
+
+            const success = await fetchSelectedData();
+            if(!success) return;
+            
+            displayData = allData.filter(item => {
+                const addressStr = (item.address || "").normalize("NFKC").toLowerCase();
+                const nameStr = (item.name || "").normalize("NFKC").toLowerCase();
+                const kanaStr = (item.name_kana || "").normalize("NFKC").toLowerCase();
+                return addressStr.includes(keyword) || nameStr.includes(keyword) || kanaStr.includes(keyword);
+            }).map(item => {
+                return { ...item, distance: null };
+            });
+
+            currentIndex = 0;
+            document.getElementById('results').innerHTML = "";
+
+            if (displayData.length === 0) {
+                document.getElementById('results').innerHTML = `<div style="text-align: center; color: var(--text-sub); padding: 20px;">「${keyword}」に一致する施設は見つかりませんでした。</div>`;
+                document.getElementById('moreContainer').style.display = 'none';
+            } else {
+                showMore();
+            }
+        }
+
+        function handleEnter(e) { if (e.key === 'Enter') searchByKeyword(); }
+
+        // 👑 サニタイズ関数（XSS対策）
+        function sanitize(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function showMore() {
+            const resultsDiv = document.getElementById('results');
+            const limit = Math.min(currentIndex + ITEMS_PER_PAGE, displayData.length);
+
+            for (let i = currentIndex; i < limit; i++) {
+                const item = displayData[i];
+                
+                // 👑 HTMLへの埋め込み前にサニタイズ処理を徹底
+                const sName = sanitize(item.name);
+                const sAddress = sanitize(item.address);
+                const sAddressSub = sanitize(item.address_sub);
+                const sTel = sanitize(item.tel);
+                const sDayOff = sanitize(item.day_off);
+                const sNotes = sanitize(item.notes);
+                const sCapacity = sanitize(item.capacity);
+
+                const card = document.createElement('div');
+                card.className = "card";
+                
+                let distanceHtml = "";
+                if (item.distance !== null) {
+                    distanceHtml = `<div class="distance-badge">📍 ここから約 ${item.distance.toFixed(1)} km</div>`;
+                    if (item.is_approximate) {
+                        distanceHtml += `<span class="approx-note">※正確な座標がないため、市区町村代表点等からの目安距離です</span>`;
+                    }
+                }
+
+                // 👑 サービス種別に応じたスタイルの割り当て
+                let tagClass = "tag-default";
+                if (item.service_type.includes("福祉施設")) tagClass = "tag-tokuyo";
+                else if (item.service_type.includes("保健施設")) tagClass = "tag-roken";
+                else if (item.service_type.includes("有料老人ホーム")) tagClass = "tag-yuryo";
+                else if (item.service_type.includes("高齢者向け住宅")) tagClass = "tag-sakoju";
+
+                let telHtml = "";
+                if (item.tel_clean && item.tel_clean.length > 0) {
+                    telHtml = `<p>📞 電話: <a href="tel:${item.tel_clean}" class="tel-link">${sTel}</a></p>`;
+                } else {
+                    telHtml = `<p style="color: var(--text-sub);">📞 電話番号情報なし</p>`;
+                }
+                
+                const hasHp = item.url && item.url.startsWith("http");
+                let titleHtml = "";
+                if (hasHp) {
+                    let hpBadge = `<a href="${item.url}" target="_blank" rel="noopener noreferrer" style="background-color: #10b981; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 8px; text-decoration: none; display: inline-block;">HPあり</a>`;
+                    titleHtml = `<h3 style="margin-top:5px; margin-bottom:5px; display:flex; align-items:center; flex-wrap:wrap;"><a href="${item.url}" target="_blank" rel="noopener noreferrer" style="color: var(--main-blue); text-decoration: underline;">🏠 ${sName}</a> ${hpBadge}</h3>`;
+                } else {
+                    let hpBadge = `<span style="background-color: #94a3b8; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 8px; display: inline-block;">HPなし</span>`;
+                    titleHtml = `<h3 style="margin-top:5px; margin-bottom:5px; display:flex; align-items:center; flex-wrap:wrap;">🏠 ${sName} ${hpBadge}</h3>`;
+                }
+
+                const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.map_address || item.address)}`;
+                
+                // 👑 【詳細アコーディオン】介護オープンデータの項目にあわせて最適化
+                const detailHtml = `
+                <details class="facility-details">
+                    <summary>🕒 利用可能曜日・定員などの詳細を見る ▼</summary>
+                    <div class="detail-content">
+                        <p><strong>【利用可能曜日】</strong> ${sDayOff || '記載なし'}</p>
+                        <p><strong>【定員（入所制限など）】</strong> ${sCapacity ? sCapacity + '名' : '記載なし'}</p>
+                        <p><strong>【特記事項】</strong><br>${sNotes || '特になし'}</p>
+                    </div>
+                </details>
+                `;
+
+                // 👑 AandB、就労移行で大成功を収めた「親サイト表示注記」を完全に維持
+                card.innerHTML = `
+                    ${distanceHtml}<br>
+                    <span class="service-tag ${tagClass}">${item.service_type}</span>
+                    ${titleHtml}
+                    <p style="margin-top: 8px;">📍 ${sAddress}${sAddressSub ? ' ' + sAddressSub : ''} <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" style="background-color: #4285f4; color: white; padding: 2px 7px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-decoration: none; margin-left: 6px; display: inline-block;">🗺 地図</a></p>
+                    ${telHtml}
+                    ${hasHp ? `<p style="font-size: 0.75rem; color: #94a3b8; margin: 2px 0 0 0;">※事業所専用ではなく、運営法人の親サイトが表示される場合があります</p>` : ''}
+                    ${detailHtml}
+                `;
+                resultsDiv.appendChild(card);
+            }
+
+            currentIndex = limit;
+            document.getElementById('moreContainer').style.display = (currentIndex < displayData.length) ? 'block' : 'none';
+        }
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; 
+            const dLat = (lat2 - lat1) * (Math.PI / 180);
+            const dLon = (lon2 - lon1) * (Math.PI / 180);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                      Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+                      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        window.onscroll = function() {
+            const btnTop = document.getElementById("btnTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnTop.style.display = "flex";
+            } else {
+                btnTop.style.display = "none";
+            }
+        };
+
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        
+        window.onload = () => {
+            document.getElementById('results').innerHTML = `<div style="text-align: center; color: var(--text-sub); padding: 20px; background: white; border-radius: 8px;">準備完了です。上のボタンから探してください。</div>`;
+        };
+    </script>
+</body>
+</html>
