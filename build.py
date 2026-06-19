@@ -156,7 +156,7 @@ def run_build():
     if os.path.exists(dist_root):
         shutil.rmtree(dist_root)
 
-    target_dir = os.path.join("dist", "nursing-home")
+    target_dir = "dist"
     os.makedirs(target_dir, exist_ok=True)
 
     summary_logs = []
