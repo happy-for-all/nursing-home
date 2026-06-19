@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="関東・関西の「就労移行支援事業所」を現在地から近い順に探せる無料検索ポータル。利用時間や定休日、定員などの詳細情報もひと目でわかります。一般就労を目指すあなたの最初の一歩を優しくサポートします。">
+    <meta name="description" content="全国の特別養護老人ホーム（特養）、介護老人保健施設（老健）、有料老人ホーム、サービス付き高齢者向け住宅（サ高住）を「現在地から近い順」に探せる完全無料の検索ポータル。お近くの施設を素早く一覧表示し、ご家族の住まい探しを優しくサポートします。">
+
     <!-- 👑 テスト中の一時的な検索ブロック -->
     <meta name="robots" content="noindex">
 
@@ -37,9 +38,17 @@
         body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
         .header { background-color: var(--main-green); color: white; text-align: center; padding: 18px 10px; font-weight: bold; font-size: 1.2rem; margin: 0; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
-        .disclaimer { background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px; border: 1px solid #ffeeba; }
+        .disclaimer { background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid #ffeeba; }
         
         .update-info { text-align: right; font-size: 0.75rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.4; }
+
+        /* 👑 修正: 検索対象フィルターのUIを緑基調で親しみやすく美しく洗練 */
+        .filter-toggle { background: #f4f9f4; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 20px; border: 1px dashed var(--main-green); cursor: pointer; color: var(--main-green); font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .filter-toggle:hover { background: #e8f3ee; }
+        .filter-settings { display: block; background: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--main-green); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .checkbox-group { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; padding: 15px; background: #f8fafc; border-radius: 8px; border: 1px solid var(--border-color); }
+        .checkbox-label { display: flex; align-items: center; font-size: 0.95rem; cursor: pointer; color: var(--text-main); }
+        .checkbox-label input { margin-right: 8px; transform: scale(1.2); }
 
         .search-box { background: var(--card-bg); padding: 25px 20px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); border: 1px solid var(--border-color); }
         .search-input { width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; margin-bottom: 15px; }
@@ -61,6 +70,7 @@
         .tag-sakoju { background-color: var(--main-green); }
         .tag-default { background-color: #4b5563; }
 
+        /* 👑 詳細情報アコーディオン用CSS */
         details.facility-details { margin-top: 15px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; }
         details.facility-details summary { cursor: pointer; color: #0284c7; font-weight: bold; font-size: 0.9rem; list-style: none; display: flex; align-items: center; justify-content: center; }
         details.facility-details summary::-webkit-details-marker { display: none; }
@@ -70,6 +80,7 @@
         .btn-more { background-color: #ffffff; color: var(--main-green); border: 2px solid var(--main-green); padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 30px; width: 100%; cursor: pointer; margin-top: 10px; }
         .btn-top { position: fixed; bottom: 20px; right: 20px; background-color: var(--main-green); color: white; width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1000; }
 
+        /* 👑 SEO記事（アコーディオン）用スタイル */
         .seo-article-box { background: #ffffff; padding: 20px; border-radius: 12px; margin-top: 30px; margin-bottom: 25px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
         .seo-article-title { color: var(--main-green); font-size: 1.15rem; font-weight: bold; margin-top: 0; margin-bottom: 15px; text-align: center; }
         .accordion-btn { background-color: #f1f5f9; color: var(--text-main); border: 1px solid #cbd5e1; padding: 15px 20px; font-size: 1rem; font-weight: bold; border-radius: 8px; width: 100%; cursor: pointer; text-align: left; position: relative; transition: 0.2s; margin-bottom: 10px; }
@@ -97,13 +108,17 @@
             当サイトは行政の公開データを自動整理して表示しています。見学やご利用をご検討の際は、必ず直接事業所へお問い合わせください。
         </div>
 
-        <div class="pro-mode-toggle" onclick="toggleProMode()">
-            ⚙️ プロ向け：複数サービス横断モードを閉じる ▲
+        <!-- 👑 修正: シンプルで美しいデザインの開閉ボタン -->
+        <div class="filter-toggle" onclick="toggleFilterMode()">
+            ⚙️ 検索する施設の種類を閉じる ▲
         </div>
         
-        <div id="proSettings" class="pro-settings">
-            <div style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 10px;">
-                探したい施設種別にチェックを入れてください。複数同時に距離順で検索できます。
+        <div id="filterSettings" class="filter-settings">
+            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: bold; text-align: center; margin-bottom: 5px;">
+                検索対象の施設
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-sub); text-align: center;">
+                チェックを入れた施設を、複数同時に距離順で検索できます。
             </div>
             <div class="checkbox-group">
                 <label class="checkbox-label">
@@ -142,11 +157,10 @@
             <button class="btn-more" onclick="showMore()">もっと見る ＋</button>
         </div>
 
-        <!-- 👑 アフィリエイト広告誘導エリア（将来的にここにタグを貼る） -->
+        <!-- 👑 修正: 不要なプレースホルダーdivを削除 -->
         <div class="affiliate-box">
             <h3 style="color: #b45309; margin-top: 0; font-size: 1.1rem;">🏢 老人ホーム選び、プロに無料で相談しませんか？</h3>
-            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 15px;">「どの施設が合うかわからない」「予算内で入れる施設を知りたい」という方は、LIFULL介護などの大手無料相談サービスを利用すると、専門のアドバイザーが最適な施設を提案してくれます。</p>
-            <div style="padding: 10px; background: white; border: 1px dashed #ccc; color: #999; font-size: 0.8rem;">（※ここに高単価な老人ホーム紹介アフィリエイト広告を配置します）</div>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 0;">「どの施設が合うかわからない」「予算内で入れる施設を知りたい」という方は、LIFULL介護などの大手無料相談サービスを利用すると、専門のアドバイザーが最適な施設を提案してくれます。</p>
         </div>
 
         <div class="seo-article-box">
@@ -163,7 +177,8 @@
             <div id="faq2" class="accordion-content">
                 <h3>サービスの手厚さと「契約形態」が異なります</h3>
                 <p><strong>介護付き有料老人ホーム</strong>は、施設のスタッフから食事・排泄・入浴などの介護サービスを24時間体制で直接受けられる施設です。重度の要介護になっても転居せず、そのまま暮らし続けられる安心感があります。</p>
-                <p>一方、**サービス付き高齢者向け住宅（サ高住）**は、原則として高齢者向けの「バリアフリー賃貸住宅」です。基本は安否確認や生活相談サービスのみで、介護が必要な場合は、一般の自宅暮らしと同じように外部のヘルパー（訪問介護等）を個別に契約して利用します。</p>
+                <!-- 👑 修正: マークダウンの残骸(**)を<strong>に修正 -->
+                <p>一方、<strong>サービス付き高齢者向け住宅（サ高住）</strong>は、原則として高齢者向けの「バリアフリー賃貸住宅」です。基本は安否確認や生活相談サービスのみで、介護が必要な場合は、一般の自宅暮らしと同じように外部のヘルパー（訪問介護等）を個別に契約して利用します。</p>
             </div>
 
             <button class="accordion-btn" onclick="toggleAccordion('faq3', this)">Q3. 特養に入るための費用はどれくらいかかりますか？</button>
@@ -175,7 +190,7 @@
             <button class="accordion-btn" onclick="toggleAccordion('faq4', this)">Q4. 介護離職を防ぐために、まず何をすべきですか？</button>
             <div id="faq4" class="accordion-content">
                 <h3>一人で抱えず、まず地域の「地域包括支援センター」へ相談を</h3>
-                <p>「親の介護のために仕事を辞めけないかも」と思ったら、まずは仕事を辞める前に、お住まいの自治体の窓口や<strong>「地域包括支援センター」</strong>へ相談してください。</p>
+                <p>「親の介護のために仕事を辞めなければいけないかも」と思ったら、まずは仕事を辞める前に、お住まいの自治体の窓口や<strong>「地域包括支援センター」</strong>へ相談してください。</p>
                 <p>ケアマネジャーを決定し、介護保険の各種サービス（デイサービスやショートステイ、老健での一時入所など）をパズルのように組み合わせることで、仕事を続けながら介護を両立させる体制をプロと一緒に作ることができます。絶対に一人で抱え込まないでください。</p>
             </div>
         </div>
@@ -223,15 +238,17 @@
         let displayData = [];
         let currentIndex = 0;
         const ITEMS_PER_PAGE = 10;
-        let isProMode = true;
+        
+        // 👑 修正: 分かりやすい変数名に変更
+        let isFilterOpen = true;
 
-        function toggleProMode() {
-            const panel = document.getElementById('proSettings');
-            isProMode = !isProMode;
-            panel.style.display = isProMode ? 'block' : 'none';
-            document.querySelector('.pro-mode-toggle').innerText = isProMode 
-                ? '⚙️ プロ向け：複数サービス横断モードを閉じる ▲' 
-                : '⚙️ プロ向け：複数サービス横断モードを開く ▼';
+        function toggleFilterMode() {
+            const panel = document.getElementById('filterSettings');
+            isFilterOpen = !isFilterOpen;
+            panel.style.display = isFilterOpen ? 'block' : 'none';
+            document.querySelector('.filter-toggle').innerText = isFilterOpen 
+                ? '⚙️ 検索する施設の種類を閉じる ▲' 
+                : '⚙️ 検索する施設の種類を選ぶ ▼';
         }
 
         async function fetchSelectedData() {
@@ -239,7 +256,7 @@
             
             let filesToFetch = [];
             
-            // 👑 【改善適用】パネルの開閉状態（isProMode）に依存せず、常にチェックボックスのチェック状態のみを参照
+            // 👑 安全策: パネルの開閉状態に依存せず、常にチェックボックスのチェック状態のみを参照
             if (document.getElementById('chk-tokuyo').checked) filesToFetch.push('data_tokuyo.json');
             if (document.getElementById('chk-roken').checked) filesToFetch.push('data_roken.json');
             if (document.getElementById('chk-yuryo').checked) filesToFetch.push('data_yuryo.json');
