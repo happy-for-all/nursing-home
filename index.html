@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="全国の特別養護老人ホーム（特養）、介護老人保健施設（老健）、有料老人ホーム、サービス付き高齢者向け住宅（サ高住）を「現在地から近い順」に探せる完全無料の検索ポータル。お近くの施設を素早く一覧表示し、ご家族の住まい探しを優しくサポートします。">
 
-    <!-- 👑 テスト中の一時的な検索ブロック -->
-    <meta name="robots" content="noindex">
-
     <!-- 👑 正規URLの指定（ロリポップ配下のフォルダパスに完全同期） -->
     <link rel="canonical" href="https://for-welfare.pray-power-is-god-and-cocoro.com/nursing-home/">
     
@@ -209,7 +206,7 @@
         </script>
 
         <!-- 👑 コメントアウトされた Google AdSense 広告ユニット -->
-        <!--
+        
         <div class="adsense-container" style="text-align: center; margin: 40px 0; min-height: 250px;">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2908004621823900" crossorigin="anonymous"></script>
             <ins class="adsbygoogle"
@@ -220,7 +217,6 @@
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
-        -->
 
         <div class="donation-box">
             <div class="donation-title">☕ 運営へのあたたかいご支援</div>
@@ -344,7 +340,8 @@
                 const addressStr = (item.address || "").normalize("NFKC").toLowerCase();
                 const nameStr = (item.name || "").normalize("NFKC").toLowerCase();
                 const kanaStr = (item.name_kana || "").normalize("NFKC").toLowerCase();
-                return addressStr.includes(keyword) || nameStr.includes(keyword) || kanaStr.includes(keyword);
+                const prefStr = (item.pref || "").normalize("NFKC").toLowerCase();
+                return addressStr.includes(keyword) || nameStr.includes(keyword) || kanaStr.includes(keyword)|| prefStr.includes(keyword);
             }).map(item => {
                 return { ...item, distance: null };
             });
